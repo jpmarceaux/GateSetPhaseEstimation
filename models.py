@@ -98,10 +98,10 @@ class UnitaryGateSetModel_CZOnly:
     def lie_basis(self, idx):
         return pauli_basis_2q[idx+1]
     
-    def true_cartan_parameters(self, germ, params):
-        unitary = self.compile_unitary(germ, params)
-        log_unitary = logm(unitary)
-        cparams = np.array( [np.trace(log_unitary @ basis) for basis in self.cartan_basis] )
-        # check that parameters are imaginary
-        assert np.allclose(np.real(cparams), 0)
-        return np.imag(cparams)
+    # def true_cartan_parameters(self, germ, params):
+    #     unitary = self.compile_unitary(germ, params)
+    #     log_unitary = logm(unitary)
+    #     cparams = np.array( [np.trace(log_unitary @ basis) for basis in self.cartan_basis] )
+    #     # check that parameters are imaginary
+    #     assert np.allclose(np.real(cparams), 0)
+    #     return np.imag(cparams)
